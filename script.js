@@ -22,6 +22,17 @@ let addElement = (e)=>
                 "images/boty7.jpg",
                 "images/boty8.jpg"];
 
+    let labels =[
+                  ["Originals", "99,99€"],
+                  ["Tubular Shadows", " 69,96€"],
+                  ["Gazelle Super", " 76,96€"],
+                  [" Campus", "99,99€"],
+                  ["Superstar", "79,95€"],
+                  ["Pureboost X TR ", "139,95€"],
+                  ["CrazyTrain Pro", "69,99€"],
+                  ["Ultra Boost ", "125,96€"]
+                ]
+
   let len = arr.length;
   let rows = parseInt(len /4, 10);
   let index = 0;
@@ -42,10 +53,21 @@ let addElement = (e)=>
       images[ind].className = "special";
       images[ind].src = arr[j];
 
+      let text1 = document.createElement("p");
+      let text2 = document.createElement("p");
+      text1.innerText = labels[j][0];
+      text2.innerText = labels[j][1];
+
       cols[ind]= document.createElement("div");
       cols[ind].className = "column col-md-3";
 
-      cols[ind].appendChild(images[ind]);
+      let referenc = document.createElement("a");
+      referenc.className = "sortiment";
+
+      referenc.appendChild(images[ind]);
+      cols[ind].appendChild(referenc);
+      cols[ind].appendChild(text1);
+      cols[ind].appendChild(text2);
       divs[i].appendChild(cols[ind]);
     }
 
