@@ -33,6 +33,15 @@ let addElement = (e)=>
                   ["Ultra Boost ", "125,96€"]
                 ]
 
+
+  /*OTRAVA*/
+  let x=5;
+  let y=4;
+  let z=x;
+  x=y;
+  y=z;
+
+
   let len = arr.length;
   let rows = parseInt(len /4, 10);
   let index = 0;
